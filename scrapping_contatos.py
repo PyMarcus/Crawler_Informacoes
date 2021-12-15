@@ -11,12 +11,31 @@ from time import sleep
 class Crawler:
     site = 'https://www.guiamais.com.br/encontre?searchbox=true&what=XXXX&where=ZZZ%2C+ZZ'
     base = 'https://www.guiamais.com.br'
+    
 
     def __init__(self, cidade, estado, pesquisa):
         """Informe a cidade-estado e o que está buscando"""
         self.__cidade = cidade
         self.__estado = estado
         self.__pesquisa = pesquisa
+        
+   
+    @property
+    def cidade(self):
+        return self.__cidade
+
+    @property
+    def estado(self):
+        return self.__estado
+
+    @property
+    def pesquisa(self):
+        return self.__pesquisa
+
+    @cidade.setter
+    def cidade(self, nova_cidade):
+        self.__cidade = nova_cidade
+
 
     def parse_html(self):
         try:
