@@ -82,7 +82,7 @@ class Crawler:
             telefones.append(telefone.text.lstrip())
         for tel in telefones:
             telefone = str(tel)
-            formato = re.compile("(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})")
+            formato = re.compile("(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})")  # regex telefone e celular
             try:
                 t.append(formato.search(telefone).group(0))
             except AttributeError:
